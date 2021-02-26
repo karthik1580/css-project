@@ -1,0 +1,164 @@
+:root {
+    --paddingZero: 0;
+    --marginZero: 0;
+    --borderColor: red;
+    --bgInnovating: #4CAF50;
+    --bgApplying: #FCC107;
+    --bgDeveloping: #FF6600;
+    --bgBeginning: #F44336;
+    --whiteText: #fff;
+    --whiteBg: #fff;
+    --outerBorer: #CECECE;
+    --solid1px: 1px solid;
+}
+* {
+    box-sizing: border-box;
+    margin: var(--paddingZero);
+    padding: var(--marginZero);    
+}
+
+html,
+body {
+    margin: var(--paddingZero);
+    padding: var(--marginZero);
+    display: flex;
+    width: 100%;
+    font-family: 'Open Sans', 'Semibold';
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;            
+    width: 100%;
+}
+
+.container {
+    width: 1366px;
+    padding: 19px 33px;
+    align-items: center;
+    justify-content: left;
+}
+
+.row {
+    width: 100%;
+    border: var(--solid1px) var(--outerBorer);
+    border-bottom: none;
+}
+.row > header,
+.row > .content{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    border-bottom: var(--solid1px) var(--outerBorer);
+    align-items: stretch;
+}
+.row > header > div,
+.row > .content > div{
+    flex-flow: column;
+    flex-grow:1;            
+    text-align: center;
+    border-left: var(--solid1px) var(--outerBorer);
+    padding: 10px 19px;  
+    width: 10%;
+    position: relative;
+}
+header > div:nth-of-type(1), .content > div:nth-of-type(1){ border: none;}
+header > div:nth-of-type(1), .content > div:nth-of-type(1),
+header > div:nth-of-type(6), .content > div:nth-of-type(6){ text-align: left;}
+
+header > div:nth-of-type(1), .content > div:nth-of-type(1){ flex-grow:3; width: 30%;}
+header > div:nth-of-type(6), .content > div:nth-of-type(6){ flex-grow:0; width: 8%;}
+header.fixedHeader { position: fixed;  z-index: 10; top: 0; margin: auto; width: 1296px;}
+
+header{ background-color: #F5F5F5;}
+.content{ background-color: #F5F5F5;}
+.contentHeader{ background-color: #EBEBEB ;}
+.content h4{ margin-bottom: 15px;}
+.content p{ font-size: 14px; text-align: left;}
+
+.bg__innovating{ background-color: var(--bgInnovating); color: var(--whiteText);}
+.bg__applying{ background-color: var(--bgApplying); color: var(--whiteText);}
+.bg__developing{ background-color: var(--bgDeveloping); color: var(--whiteText);}
+.bg__beginning{ background-color: var(--bgBeginning); color: var(--whiteText);}
+i{display: block;}
+
+.domine__content{
+    display: flex;
+    position: relative;
+}
+.domine__content h3{  text-align: left; width: 100%;  }
+.domine__content h3 span{  float: left;}
+.domine__content h3 span:last-child{width: 60%;}
+.domine__content button{ 
+    position: absolute;
+    right: 0;
+    top: 5px;    
+    background-color: #E2E2E2;
+    color:#777777;
+    border: 1px solid #E2E2E2;
+    border-radius: 16px;
+    min-height: 25px;
+    min-width: 72px;
+    padding: 3px 15px;    
+}
+.removeBg {
+    background-color: var(--whiteBg);
+}
+.customeCheck{
+    position: absolute;
+    right: -2px;
+    top: -1px;
+    width: 30px;
+    height: 30px;
+}
+.custome--checkbox {
+    position: relative;
+}
+.custome--checkbox label {
+    background-color: transparent;                      
+    border-bottom-left-radius: 35px;
+    cursor: pointer;
+    height: 28px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 28px;
+}
+.custome--checkbox label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 10px;
+    opacity: 0;
+    position: absolute;
+    top: 5px;
+    transform: rotate(-45deg);
+    width: 12px;
+}
+.custome--checkbox input[type="checkbox"] {
+    visibility: hidden;
+}
+.custome--checkbox input[type="checkbox"]:checked + label {
+    background-color: #66bb6a;
+}
+.custome--checkbox input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+.innovating--container .custome--checkbox input[type="checkbox"]:checked + label {
+    background-color: var(--bgInnovating);
+}
+.applying--container .custome--checkbox input[type="checkbox"]:checked + label {
+    background-color: var(--bgApplying);
+}
+.developing--container .custome--checkbox input[type="checkbox"]:checked + label {
+    background-color: var(--bgDeveloping);
+}
+.beginning--container .custome--checkbox input[type="checkbox"]:checked + label {
+    background-color: var(--bgBeginning);
+}
+.innovating--container:hover,
+.applying--container:hover,
+.developing--container:hover,
+.beginning--container:hover{cursor: pointer;}
